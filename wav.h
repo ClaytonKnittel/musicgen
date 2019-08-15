@@ -3,8 +3,6 @@
 
 #include <stdio.h>
 
-
-#define sample_t long
 #define uint unsigned int
 
 
@@ -28,9 +26,6 @@ typedef struct AudioFmt_T {
     // number of bits per sample per channel (usually 8 or 16)
     uint nBitsPerSample;
 } AudioFmt;
-
-// #define gen_audioWrite_()
-// int audioWrite ## DT ## ()
 
 int audioWrite(const char* file, const short* audioData, AudioFmt afmt);
 

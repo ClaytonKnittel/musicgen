@@ -1,8 +1,15 @@
 GC=gcc
 GP=g++
 EXE=mpl
-CPPFLAGS=-std=c++17 -g
-CFLAGS=-g
+
+ifeq ($(DEBUG), 1)
+CPPFLAGS=-std=c++17 -MMD -g -O0 -D DEBUG=1
+CFLAGS=-g -MMD -O0
+else
+CPPFLAGS=-std=c++17 -MMD -O2
+CFLAGS=-g -MMD -O2
+endif
+
 
 SDIR=.
 ODIR=.obj
